@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Miniaturas 3D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .upload-form {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .upload-form input[type="file"] {
+            margin: 10px 0;
+        }
+        .upload-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .upload-form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Galeria de Miniaturas 3D</h1>
+    </header>
+    
+    <div class="upload-form">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="file">Selecione uma imagem para upload:</label><br>
+            <input type="file" id="file" name="file" accept="image/*"><br>
+            <button type="submit">Fazer Upload</button>
+        </form>
+    </div>
+
+    <section class="gallery">
+        <!-- Aqui serão exibidas as imagens das miniaturas -->
+        <img src="https://via.placeholder.com/200" alt="Miniatura Exemplo">
+        <img src="https://via.placeholder.com/200" alt="Miniatura Exemplo">
+        <img src="https://via.placeholder.com/200" alt="Miniatura Exemplo">
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Galeria de Miniaturas 3D. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
